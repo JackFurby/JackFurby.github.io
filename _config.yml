@@ -28,7 +28,7 @@ twitter_username: Jack_Furby
 github_username:  jackFurby
 
 # Build settings
-theme: plainwhite
+remote_theme: samarsault/plainwhite-jekyll
 plugins:
   - jekyll-feed
 
