@@ -30,6 +30,7 @@ author:
   twitter_username: Jack_Furby
   github_username:  jackFurby
   email: blog@jackfurby.co.uk
+  avatar: /assets/img/avatar.jpg # change with your own avatar
 
 # Build settings
 remote_theme: piharpi/jekyll-klise
