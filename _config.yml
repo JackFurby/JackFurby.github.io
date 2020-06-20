@@ -19,35 +19,69 @@
 # in the templates via {{ site.myvariable }}.
 
 title: Blog
-email: blog@jackfurby.co.uk
 description: >- # this means to ignore newlines until "baseurl:"
   A blog site for intresting things that I do.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: Jack_Furby
-github_username:  jackFurby
+mode: dark # default theme "dark" | "light"
+
+author:
+  name: Jack Furby # author name
+  bio: >- # tell to the world
+    Machine Learning researcher looking at human and Artificial Intelligence collaboration
+  twitter_username: Jack_Furby
+  github_username:  jackFurby
+  email: blog@jackfurby.co.uk
 
 # Build settings
 remote_theme: piharpi/jekyll-klise
 plugins:
   - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-postfiles
 
-# Exclude from processing.
-# The following items will not be processed, by default.
-# Any item listed under the `exclude:` key here will be automatically added to
-# the internal "default list".
-#
-# Excluded items can be processed by explicitly listing the directories or
-# their entries' file path in the `include:` list.
-#
-# exclude:
-#   - .sass-cache/
-#   - .jekyll-cache/
-#   - gemfiles/
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules/
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+# Collection setting
+collections:
+  posts:
+    output: true
+
+# Markdown settings
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  syntax_highlighter: rouge
+
+# Default front matter
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: post
+      comments: false
+
+# Jekyll Compose default front matter
+jekyll_compose:
+  post_default_front_matter:
+    modified:
+    tags: []
+    description:
+  draft_default_front_matter:
+    modified:
+    tags: []
+    description:
+
+# Build settings
+sass:
+  style: compressed
+
+include:
+  - _redirects
+  - .htaccess
+
+exclude:
+  - CNAME
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - CHANGELOG.md
+  - README.md
+  - node_modules
+  - CODE_OF_CONDUCT.md
