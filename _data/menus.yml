@@ -1,6 +1,6 @@
 - title: home
-  url: /
-  external: false
+  url: https://jackfurby.co.uk
+  external: true
 
 # Example:
 # - title: github

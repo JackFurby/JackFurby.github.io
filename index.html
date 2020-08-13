@@ -1,0 +1,17 @@
+---
+layout: default
+title: "Home"
+---
+
+{% if site.author %}
+  <h1 style="text-align: center;">{{ site.author }}</h1>
+  {% if site.description %}
+    <h3 style="text-align: center;">{{ site.description }}</h3>
+  {% endif %}
+{% endif %}
+
+{% if site.show_excerpts %}
+  {% include home.html %}
+{% else %}
+  {% include archive.html title="Posts" %}
+{% endif %}
